@@ -8,7 +8,11 @@ $ az login # Open the link generate after running this command and add the code 
 $ az vm identity assign --name "vm-day-4" --resource-group "TechM-Feb" # Generate "systemAssignedIdentity"
 $ az keyvault set-policy --name "<your-vault-name>" --object-id "use-<systemAssignedIdentity> generated in above command" --secret-permissions get list set
 ```
-
+### Setting up permission for AzureApp to KeyVault
+```
+$ az webapp identity assign --name kulsampledotnet --resource-group "TechM-Feb"
+$ az keyvault set-policy --name "kulkv" --object-id "principal-id" --secret-permission get list
+```
 ### Install Python3 and PIP3 on Ubuntu
 ```
 $  python3 --version
