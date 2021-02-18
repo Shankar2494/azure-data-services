@@ -45,14 +45,26 @@ $  mkdir dotnet-sample
 $  cd dotnet-sample/
 $  dotnet new web
 $  dotnet run # to check if code is working or not try doing "curl http://localhost:5000 on duplicate session"
+```
 
-# Setting up local GIT Repo
-
+### Setting up local GIT Repo
+```
 $  git init
 $  git add .
 $  git commit -m "sample dotnet core code"
+```
 
+### Creating Azure WebApp
+```
 $  az webapp deployment user set --user-name "<your-user>" --password "<your-password>"
 $  az appservice plan create --name kulAppServicePlan --resource-group "TechM-Feb" --sku FREE
 $  az webapp create --resource-group "TechM-Feb" --plan "kulAppServicePlan" --name "kulSampleDotnet" --deployment-local-git
+```
+
+### Deploying local appp to Azure
+```
+git remote -v
+git remote add sampleDotnet https://kmayer10@kulsampledotnet.scm.azurewebsites.net/kulSampleDotnet.git
+git status
+git push sampleDotnet master
 ```
