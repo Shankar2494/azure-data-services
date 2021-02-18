@@ -6,7 +6,7 @@ $ az login # Open the link generate after running this command and add the code 
 ### Setting up permission for VM on Key Vault
 ```
 $ az vm identity assign --name "vm-day-4" --resource-group "TechM-Feb" # Generate "systemAssignedIdentity"
-$ az keyvault set-policy --name "<your-vault-name>" --object-id "use-<systemAssignedIdentity> generated in above command" --secret-permissions get list
+$ az keyvault set-policy --name "<your-vault-name>" --object-id "use-<systemAssignedIdentity> generated in above command" --secret-permissions get list set
 ```
 
 ### Install Python3 and PIP3 on Ubuntu
