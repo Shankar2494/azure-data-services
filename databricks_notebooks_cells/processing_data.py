@@ -11,4 +11,6 @@ flightDF.printSchema()
 print("NUmber of Flight: ",flightDF.count())
 
 ontime_data.show(100, False)
-#flightDF(20, False)
+flightDF.show(20, False)
+
+display(flightDF)
